@@ -75,7 +75,7 @@ Feedback
 ---
 Feedback e segnalazioni sono gradite e possono essere inserite qui: 
 
-* https://github.com/carlozamagni/bookly/issues
+* https://github.com/UieLinux/bookly/issues
 
 
 
