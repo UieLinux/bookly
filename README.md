@@ -35,7 +35,6 @@ compilando i seguenti dati:
 * Autore
 * Nota libera
 * Stato del libro (come nuovo, malconcio, ecc.)
-* Tipo offerta (venderlo, donarlo)
 
 ### Libri che cerco
 Come per la precedente funzione, devo poter compilare
