@@ -62,4 +62,8 @@ def book_details(book_id):
 
     return redirect('/catalog/my')
 
+@catalog_app.route('/search')
+def search():
+    return render_template('catalog/search.html')
+
 
