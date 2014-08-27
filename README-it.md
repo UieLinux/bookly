@@ -62,7 +62,7 @@ In una seconda versione, prevederemo alcuni automatismi, per semplificare le fun
 
 1. Se un utente ha già inserito un libro, il programma può accorgersene e proporre automaticamente la descrizione
 2. Con il codice ISBN si può estrarre la copertina del libro da siti come amazon
-3. Aggiunta di un controllo sul codice ISBN (deve essere valido)
+3. <s>Aggiunta di un controllo sul codice ISBN (deve essere valido)</s>
 4. Bookly dovrà essere in lingua
 5. Dovrà essere possibile inserire la propria zona di appartenenza (es: provincia)
 6. Un libro trovato deve avere una funzione per poterlo mettere nei libri disponibili per la vendita o cancellato
