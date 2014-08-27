@@ -1,27 +1,26 @@
 Bookly
-
 ===
-Bookly si rivolge alle persone che vogliono vendere, acquistare o donare i propri libri.
+Bookly is aimed to people who wants to sell, buy or donate their books.
+ 
+Bookly does not handle the sale of the books.
+This is not his goal.
+The purpose of the program is to simplify the match between demand and offer putting in contact
+the interested people in the easiest way possible.
 
-Bookly non si preoccupa di gestire la vendita dei libri.
-Non è questo il suo obiettivo.
-Lo scopo del programma è quello di semplificare il match fra domanda e offerta mettendo in contatto
-gli interessati nel modo più semplice possibile
 
-
-Registrazione
+Registration
 ---
-Gli utenti possono registrarsi su Bookly utilizzando i propri account di:
+Users can register on Bookly using theirs account of:
 
 * Facebook
 * Twitter
 * Google
 
-Se l'utente non possiede nessuno di questi account, è comunque possibile effettuare la registrazione direttamente sul sito.
+If the users doesn't possess any of these accounts, is still possible to register directly on the site.
 
-Funzionalità principali
+Key features
 ---
-Appena registrato, un utente può fare 3 cose.
+Just registered, an user can do 3 things.
 
 1. Compilare una lista di libri da offrire (o vendere)
 2. Compilare una lista di libri da cercare (o acquistare)
