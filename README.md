@@ -70,6 +70,12 @@ In una seconda versione, prevederemo alcuni automatismi, per semplificare le fun
 8. Ogni acquisto che viene fatto genera una donazione
 9. Scansione dei codice a barre tramite cellulare / webcam per velocizzare l'inserimento dei libri nelle liste
 
+Note
+---
+Documentation in italian language is available here
+
+* [README-it](README-it.md)
+
 Feedback
 ---
 Feedback e segnalazioni sono gradite e possono essere inserite qui: 
