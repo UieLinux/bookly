@@ -56,9 +56,9 @@ The match between the offer and demand needs to be done independently by the pro
 It is possible that the books the user is looking for, are inserted after the search.
 When the program finds a match between offer and demand an email will be sent to the 2 interested.
 
-Spunti da valutare per versioni future
+Ideas for the future
 ---
-In una seconda versione, prevederemo alcuni automatismi, per semplificare le funzioni utente, quali:
+In a next version, some automatisms, in order to semplify the user functions, like:
 
 1. Se un utente ha già inserito un libro, il programma può accorgersene e proporre automaticamente la descrizione
 2. Con il codice ISBN si può estrarre la copertina del libro da siti come amazon
