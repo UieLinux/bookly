@@ -11,8 +11,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '123456790'
 
 # db config
-#app.config['MONGODB_SETTINGS'] = {'DB': 'testing', 'HOST': 'mongodb://bookly:bookly@ds059509.mongolab.com:59509/bookly'}
-app.config['MONGODB_SETTINGS'] = {'DB': 'testing', 'HOST': 'mongodb://localhost:27017/bookly'}
+app.config['MONGODB_SETTINGS'] = {'DB': 'testing', 'HOST': 'mongodb://bookly:bookly@ds059509.mongolab.com:59509/bookly'}
+#app.config['MONGODB_SETTINGS'] = {'DB': 'testing', 'HOST': 'mongodb://localhost:27017/bookly'}
 db = MongoEngine()
 db.init_app(app)
 
