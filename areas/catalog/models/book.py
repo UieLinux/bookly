@@ -26,6 +26,6 @@ class Book(db.Document):
                 'title': self.title,
                 'author': self.author,
                 'owner': self.owner,
-                'created_at': self.created_at,
+                'created_at': self.created_at.strftime('%H:%M:%S - %Y/%m/%d'),
                 'status': self.status,
                 'notes': self.notes}
