@@ -22,33 +22,33 @@ Key features
 ---
 Just registered, an user can do 3 things.
 
-1. Compilare una lista di libri da offrire (o vendere)
-2. Compilare una lista di libri da cercare (o acquistare)
-2. Fare una ricerca spot nell'archivio completo dei libri
+1. Compile a list of books to offer (or sell)
+2. Compile a list of books to search (or buy)
+2. Do a search for a specific book
 
-### Libri che offro
-L'utente compila una lista dei libri che desidera offrire,
-compilando i seguenti dati:
+### Books that i offer
+The user compile a list of books, he want to offer
+by giving specific informations:
 
-* ISBN (obbligatorio)
-* Titolo (obbligatorio)
-* Autore
-* Nota libera
-* Stato del libro (come nuovo, malconcio, ecc.)
+* ISBN (obligatory)
+* Titolo (obligatory)
+* Author
+* Note
+* Status of the book (new, battered, ecc.)
 
-### Libri che cerco
-Come per la precedente funzione, devo poter compilare
-una lista di libri che desidero acquisire.
-In questo caso è sufficiente i seguenti dati:
+### Books i look for
+As the previous function, i have to compile
+a list of books i want to get
+In this case, just the following data:
 
-* ISBN (obbligatorio)
-* Data massima (oltre la quale non sono più interessato)
-* Nota libera
+* ISBN (obbligatory)
+* Expiration date (beyond which i am no longer interested)
+* Note
  
-### Ricerca libri
-Questa funzione permette agli utenti di mostrare una lista di tutti i libri presenti in archivio.
-Sia quelli offerti che ricercati.
-Dopo aver visualizzato la lista, l'utente clicca sui dettagli del libro e vede i dati del proprietario.
+### Books search
+This function allows users to show a list of all the books in the archive.
+Both those offered that sought.
+After viewing the list, the user clicks on the book's details and sees the owner data.
 Questa modalità permette di contattare la persona che offre il libri senza passare dalla funzione di match.
 
 ### Match automatico
