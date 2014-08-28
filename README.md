@@ -58,14 +58,14 @@ When the program finds a match between offer and demand an email will be sent to
 
 Ideas for the future
 ---
-In a next version, some automatisms, in order to semplify the user functions, like:
+In a next version, some automatisms will be added, in order to semplify the user functions, like:
 
-1. Se un utente ha già inserito un libro, il programma può accorgersene e proporre automaticamente la descrizione
-2. Con il codice ISBN si può estrarre la copertina del libro da siti come amazon
-3. <s>Aggiunta di un controllo sul codice ISBN (deve essere valido)</s>
+1. If a user has already inserted a book, the program can detect this and automatically propose the description
+2. With the ISB code is possible to extract the cover of the book from sites like amazon
+3. <s>Adding a check on the ISBN (it must be valid)</s>
 4. Bookly dovrà essere in lingua
-5. Dovrà essere possibile inserire la propria zona di appartenenza (es: provincia)
-6. Un libro trovato deve avere una funzione per poterlo mettere nei libri disponibili per la vendita o cancellato
+5. Will be possible to insert your origins of belonging (Example: province)
+6. A book must have a function to be able to put it in the books available for sale or deleted
 7. Creare una moneta di virtuale a punti per la vendita / acquisto dei libri
 8. Ogni acquisto che viene fatto genera una donazione
 9. Scansione dei codice a barre tramite cellulare / webcam per velocizzare l'inserimento dei libri nelle liste
