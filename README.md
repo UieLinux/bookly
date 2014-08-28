@@ -72,7 +72,7 @@ In una seconda versione, prevederemo alcuni automatismi, per semplificare le fun
 
 Note
 ---
-Documentation in italian language is available here
+Questa pagina è stata tradotta anche in lingua italiana
 
 * [README-it](README-it.md)
 
