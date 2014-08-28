@@ -31,4 +31,4 @@ def search():
     for b in q_result:
         book_results.append(b.dict_representation())
 
-    return jsonify(results=book_results)
+    return jsonify(book_results)

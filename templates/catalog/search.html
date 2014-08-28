@@ -1,17 +1,75 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 
-{% block angular_definition %}ng-app="searchApp"{% endblock %}
-{% block custom_head_scripts %}
+{% block angular_definition %}ng-app="booklyApp"{% endblock %}
+{% block custom_head %}
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular-route.js"></script>
 
-    <script src="/static/controllers/catalog/detail.js"></script>
+    <script src="/static/frontend/bookly.js"></script>
+    <!--
     <script>
-        catalogApp.value("slug", "{{ item.sku }}");
+        catalogApp.value("slug", "skuskuskusku");
     </script>
+    -->
 {% endblock %}
 
 {% block page_body %}
-    <h3>TODO: search result page</h3>
+    <div class="content-section-b">
+        <div class="container" ng-controller="searchCtrl">
+
+            <div class="row">
+                <hr class="section-empty-spacer">
+            </div>
+
+            <div class="row col-sm-offset-3 col-sm-6">
+                <div>
+                    <form class="form-horizontal" name="searchForm" novalidate role="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-barcode"></span>
+                                </span>
+
+                                <div>
+                                    <input type="text" name="name" ng-model="isbn" class="form-control" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </span>
+
+                                <div>
+                                    <input type="text" name="name" ng-model="fulltext" class="form-control" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button ng-click="submit()" class="btn btn-default">Cerca</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <hr class="section-empty-spacer">
+            </div>
+
+            <div class="row col-sm-offset-3 col-sm-6">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                            <tr class="active" ng-repeat="book in searchResult">
+                                <td>"[[ book.title ]]"</td>
+                                <td>"[[ book.isbn ]]"</td>
+                                <td><a href="details/[[ book.id ]]">dettagli</a></td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
 {% endblock %}
