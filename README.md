@@ -63,22 +63,22 @@ In a next version, some automatisms will be added, in order to semplify the user
 1. If a user has already inserted a book, the program can detect this and automatically propose the description
 2. With the ISB code is possible to extract the cover of the book from sites like amazon
 3. <s>Adding a check on the ISBN (it must be valid)</s>
-4. Bookly dovrà essere in lingua
+4. Bookly will be internationalized
 5. Will be possible to insert your origins of belonging (Example: province)
 6. A book must have a function to be able to put it in the books available for sale or deleted
-7. Creare una moneta di virtuale a punti per la vendita / acquisto dei libri
-8. Ogni acquisto che viene fatto genera una donazione
-9. Scansione dei codice a barre tramite cellulare / webcam per velocizzare l'inserimento dei libri nelle liste
+7. Create a virtual currency for the selling / buying of the books
+8. Every purchase that is done generates a donation
+9. Scan the barcode by mobile phone / webcam for a faster insertion of the books in the lists
 
 Note
 ---
-Questa pagina è stata tradotta anche in lingua italiana
+This page has been translated into Italian
 
 * [README-it](README-it.md)
 
 Feedback
 ---
-Feedback e segnalazioni sono gradite e possono essere inserite qui: 
+Feedback and comments are welcome and may be included here: 
 
 * https://github.com/UieLinux/bookly/issues
 
