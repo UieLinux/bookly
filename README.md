@@ -49,12 +49,12 @@ In this case, just the following data:
 This function allows users to show a list of all the books in the archive.
 Both those offered that sought.
 After viewing the list, the user clicks on the book's details and sees the owner data.
-Questa modalità permette di contattare la persona che offre il libri senza passare dalla funzione di match.
+This mode allows you to contact the person who provides the books without going through the  match feature.
 
-### Match automatico
-Il match fra la domanda e l'offerta deve essere fatto autonomamente dal programma.
-E' infatti possibile che i libri che l'utente sta cercando vengano inseriti da altri utenti in un momento successivo a quello dell'inserimento della ricerca.
-Quando il programma trova dei match fra domanda e offerta viene inviata una mail ai 2 interessati
+### Automatic match
+The match between the offer and demand needs to be done independently by the program.
+It is possible that the books the user is looking for, are inserted after the search.
+When the program finds a match between offer and demand an email will be sent to the 2 interested.
 
 Spunti da valutare per versioni future
 ---
