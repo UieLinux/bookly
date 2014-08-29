@@ -11,7 +11,7 @@ var booklyApp = angular.module('booklyApp', ['ngRoute'], function ($interpolateP
 
 booklyApp.controller('searchCtrl', function ($scope, $http) {
     //var baseUrl = 'http://bookly-app.herokuapp.com';
-    var baseUrl = 'http://127.0.0.1:5000';
+    var baseUrl = 'http://bookly-app.herokuapp.com';
     $scope.submit = function () {
 
         var isbnQuerystringArg = '';
