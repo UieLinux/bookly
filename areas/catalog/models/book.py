@@ -14,7 +14,7 @@ class Book(db.Document):
     author = db.StringField(max_length=200)
     owner = db.StringField(required=True)
     status = db.IntField(required=True, choices=[1, 2, 3, 4, 5])
-    notes = db.StringField(max_length=5000)
+    notes = db.StringField(max_length=5000, required=False)
     created_at = db.DateTimeField(required=False, default=datetime.datetime.utcnow())
 
     def __unicode__(self):
