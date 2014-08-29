@@ -18,6 +18,7 @@ db.init_app(app)
 
 admin = Admin(app)
 
+
 # login init
 lm = LoginManager()
 lm.init_app(app)
@@ -27,12 +28,19 @@ setattr(sys.modules['infrastructure'], 'login_manager', lm)
 setattr(sys.modules['infrastructure'], 'admin', admin)
 setattr(sys.modules['infrastructure'], 'db', db)
 
+# Authentication
 from areas.user.auth import user_app
 app.register_blueprint(blueprint=user_app, url_prefix='/user')
 
+# Books to offer
 from areas.catalog.catalog import catalog_app
 app.register_blueprint(blueprint=catalog_app, url_prefix='/catalog')
 
+# Books to find
+from areas.wanted.wanted import wanted_app
+app.register_blueprint(blueprint=wanted_app, url_prefix='/wanted')
+
+# Search API
 from areas.api.search import api
 app.register_blueprint(blueprint=api, url_prefix='/api')
 

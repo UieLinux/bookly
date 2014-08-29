@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block page_body %}
+
+    <div class="content-section-b">
+        <div class="container">
+
+            <div class="row">
+                <hr class="section-empty-spacer">
+            </div>
+            <div class="row">
+                <h3>{{ book.title }}</h3>
+            </div>
+
+            <div class="row">
+
+                <div class="table-responsive">
+                    <table class="table table-striped">
+
+                        <tr class="active">
+                            <td>ISBN</td>
+                            <td>{{ book.isbn }}</td>
+                        </tr>
+
+                        <tr class="active">
+                            <td>Titolo</td>
+                            <td>{{ book.title }}</td>
+                        </tr>
+
+                        <tr class="active">
+                            <td>Autore</td>
+                            <td>{{ book.author }}</td>
+                        </tr>
+
+                        <tr class="active">
+                            <td>Proprietario del libro</td>
+                            <td>{{ owner.first_name }} {{ owner.last_name }}</td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Valutazione sullo stato del libro</div>
+                    <div class="panel-body">
+                        {% for i in range(1,book.status) %}
+                            <span class="glyphicon glyphicon-star"></span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Note</div>
+                    <div class="panel-body">
+                        {{ book.notes }}
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- discussions or message threads can be visualized as this:
+
+            http://getbootstrap.com/components/#list-group-custom-content
+
+            that would be cool!
+            -->
+
+        </div>
+    </div>
+
+{% endblock %}
