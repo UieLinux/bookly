@@ -11,7 +11,7 @@ def extract_digits_from_value(value):
     digits = [int(char) for char in value if char.isdigit()]
 
     # In ISBN-10 the last char can be sometimes X which is the roman number ten
-    if len(digits) == 9 and re.match('[xX]$', value):
+    if len(digits) == 9 and (value[-1] == 'X' or value[-1] == 'x'):
         digits.append(10)
 
     return digits
