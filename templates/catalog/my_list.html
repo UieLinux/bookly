@@ -3,16 +3,28 @@
 {% block page_body %}
 
     <div class="content-section-b">
+
+
         <div class="container">
 
+           <div class="row">
+                <div class="col-md-2-right">
+                    <a class="btn btn-default" href="/catalog/add">Aggiungi un libro</a>
+                </div>
+           </div>
+
             <div class="row">
-
                 <hr class="section-empty-spacer">
-
-
             </div>
+
             <div class="row">
                 <p>Libri di: {{ user }}</p>
+
+                <!--
+<button type="button" class="btn btn-primary">
+<span class="glyphicon glyphicon-plus-sign"></span> Aggiungi
+</button>
+-->
             </div>
 
             <div class="row">
@@ -29,7 +41,27 @@
                             <tr class="active">
                                 <td>{{ i.isbn }}</td>
                                 <td>{{ i.title }}</td>
-                                <td><a href="details/{{ i.id }}">dettagli</a></td>
+                                  <!--
+                                <td>
+
+
+<button type="button" class="btn btn-danger btn-xs">
+<span class="glyphicon glyphicon-remove"></span> cancella
+</button>
+
+<button type="button" class="btn btn-success btn-xs">
+<span class="glyphicon glyphicon-search"></span> dettagli
+</button>
+
+
+
+
+
+                                </td>
+  -->
+                                <td>
+                               <a class="btn btn-default btn-xs" href="details/{{ i.id }}"><span class="glyphicon glyphicon-search"></span> dettagli</a>
+     </td>
                             </tr>
 
                         {% endfor %}

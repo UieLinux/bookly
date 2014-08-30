@@ -2,15 +2,25 @@
 
 {% block page_body %}
 
-
     <div class="content-section-b">
+
+
         <div class="container">
+
+            <div class="row">
+                <div class="col-md-2-right">
+                    <a class="btn btn-default" href="/wanted/add">Aggiungi un libro</a>
+                </div>
+            </div>
 
             <div class="row">
                 <hr class="section-empty-spacer">
             </div>
+
+
+
             <div class="row">
-                <p>Libri di: {{ user }}</p>
+                <p>I libri che vorrei trovare:</p>
             </div>
 
 
@@ -20,6 +30,7 @@
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tr>
+
                             <th>ISBN</th>
                             <th>Titolo</th>
                             <th></th>
@@ -27,9 +38,16 @@
                         {% for i in books.items %}
 
                             <tr class="active">
+<!--
+                                <td><input type=checkbox name=do_delete value="{{ i.isbn }}"></td>
+-->
                                 <td>{{ i.isbn }}</td>
                                 <td>{{ i.title }}</td>
-                                <td><a href="details/{{ i.id }}">dettagli</a></td>
+                                <td>
+                                    <!--<a href="details/{{ i.id }}">dettagli</a>-->
+                                    <a class="btn btn-default btn-xs" href="details/{{ i.id }}"><span class="glyphicon glyphicon-search"></span> dettagli</a>
+                                </td>
+
                             </tr>
 
                         {% endfor %}

@@ -4,9 +4,6 @@ from flask import Blueprint, flash, redirect, request, render_template, session,
 from flask.ext.login import login_required
 from areas.wanted.models.book import BookWanted
 from areas.wanted.models.forms import NewBookWantedForm
-
-
-
 from areas.user.models.user import User
 import infrastructure
 
@@ -51,7 +48,7 @@ def my_books_list(page_id=1):
     if user_id:
 
         paginated_books = BookWanted.objects(owner=user_id).paginate(page=page_id, per_page=15)
-        return render_template('catalog/my_list.html', books=paginated_books, user=session.get('user_name'))
+        return render_template('wanted/my_list.html', books=paginated_books, user=session.get('user_name'))
 
     return redirect('user/login')
 
@@ -62,9 +59,9 @@ def book_details(book_id):
     if book:
         is_owner = book.owner == session.get('user_id', None)
         owner_details = User.objects(id=str(book.owner)).first()
-        return render_template('catalog/details.html', book=book, owner=owner_details, is_owner=is_owner)
+        return render_template('wanted/details.html', book=book, owner=owner_details, is_owner=is_owner)
 
-    return redirect('/catalog/my')
+    return redirect('/wanted/my')
 
 @wanted_app.route('/search')
 def search():
