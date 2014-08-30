@@ -11,13 +11,7 @@ class NewBookWantedForm(Form):
     #isbn = StringField('isbn', validators=[DataRequired(), valid_isbn], description={'placeholder': 'isbn'})
     isbn = StringField('isbn', validators=[DataRequired()], description={'placeholder': 'isbn'})
     title = StringField('title', validators=[DataRequired()], description={'placeholder': 'titolo'})
-    author = StringField('author', validators=[DataRequired()], description={'placeholder': 'autore'})
-    notes = StringField('notes', validators=[DataRequired()], description={'placeholder': 'note aggiuntive'})
-    status = RadioField('status', validators=[DataRequired()], choices=[(1, 'abbastanza rovinato'),
-                                                                        (2, 'condizioni decenti'),
-                                                                        (3, 'accettabile'),
-                                                                        (4, 'ben tenuto'),
-                                                                        (5, 'come nuovo')], coerce=int)
+    notes = StringField('notes', description={'placeholder': 'note aggiuntive'})
 
     owner = HiddenField('owner')
 

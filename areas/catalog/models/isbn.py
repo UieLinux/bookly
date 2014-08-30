@@ -1,5 +1,6 @@
 import re
 from wtforms import ValidationError
+from flask import flash
 
 isbn_pattern = re.compile('^(?:ISBN[-:]? ?)?(?:(?:\d+[- ]?){3}[\dX]|(?:\d+[- ]?){4}\d)$', re.I)
 
@@ -57,6 +58,7 @@ def valid_isbn(form, field):
     digits = extract_digits_from_value(field.data)
 
     if not (len(digits) == 10 or len(digits) == 13):
+        #flash('Numero errato di cifre', )
         raise ValidationError('Wrong number of digits')
 
     if not validate_checksum(digits):

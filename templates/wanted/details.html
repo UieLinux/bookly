@@ -27,15 +27,6 @@
                             <td>{{ book.title }}</td>
                         </tr>
 
-                        <tr class="active">
-                            <td>Autore</td>
-                            <td>{{ book.author }}</td>
-                        </tr>
-
-                        <tr class="active">
-                            <td>Proprietario del libro</td>
-                            <td>{{ owner.first_name }} {{ owner.last_name }}</td>
-                        </tr>
 
                     </table>
 
@@ -45,14 +36,7 @@
 
             <div class="row">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">Valutazione sullo stato del libro</div>
-                    <div class="panel-body">
-                        {% for i in range(1,book.status) %}
-                            <span class="glyphicon glyphicon-star"></span>
-                        {% endfor %}
-                    </div>
-                </div>
+
             </div>
 
             <div class="row">
