@@ -1,3 +1,4 @@
+import json
 import re
 from flask import Blueprint, request, jsonify
 from areas.catalog.models.book import Book
@@ -31,4 +32,5 @@ def search():
     for b in q_result:
         book_results.append(b.dict_representation())
 
-    return jsonify(results=book_results)
+    #return jsonify(book_results)
+    return json.dumps(book_results)

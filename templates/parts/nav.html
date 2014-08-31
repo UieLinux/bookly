@@ -19,7 +19,7 @@
                     <a href="#">Chi siamo</a>
                 </li>
                 <li>
-                    <a href="#">Cerca</a>
+                    <a href="/catalog/search">Cerca</a>
                 </li>
                 <li>
                     {% if not session.logged_in %}
@@ -29,9 +29,15 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ session.user_name }}<span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="/catalog/my">Catalogo</a></li>
-                                <li><a href="/catalog/add">Metti in vendita</a></li>
-                                <li><a href="/user/logout">Logout</a></li>
+
+
+
+                                <li><a href="/wanted/my">Cerco libri</a></li>
+                                <li><a href="/catalog/my">Offro libri</a></li>
+
+                                <li role="presentation" class="divider"></li>
+
+                                <li><a href="/user/logout">Esci</a></li>
                             </ul>
                         </li>
 

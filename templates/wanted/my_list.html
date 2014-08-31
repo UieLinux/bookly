@@ -7,31 +7,31 @@
 
         <div class="container">
 
-           <div class="row">
+        
+            <div class="row">
                 <div class="col-md-2-right">
-                    <a class="btn btn-default" href="/catalog/add">Aggiungi un libro</a>
+                    <a class="btn btn-default" href="/wanted/add">Aggiungi un libro</a>
                 </div>
-           </div>
+            </div>
 
             <div class="row">
                 <hr class="section-empty-spacer">
             </div>
 
-            <div class="row">
-                <p>Libri di: {{ user }}</p>
 
-                <!--
-<button type="button" class="btn btn-primary">
-<span class="glyphicon glyphicon-plus-sign"></span> Aggiungi
-</button>
--->
+
+            <div class="row">
+                <p>I libri che vorrei trovare:</p>
             </div>
+
+
 
             <div class="row">
 
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <tr>
+
                             <th>ISBN</th>
                             <th>Titolo</th>
                             <th></th>
@@ -39,29 +39,16 @@
                         {% for i in books.items %}
 
                             <tr class="active">
+<!--
+                                <td><input type=checkbox name=do_delete value="{{ i.isbn }}"></td>
+-->
                                 <td>{{ i.isbn }}</td>
                                 <td>{{ i.title }}</td>
-                                  <!--
                                 <td>
-
-
-<button type="button" class="btn btn-danger btn-xs">
-<span class="glyphicon glyphicon-remove"></span> cancella
-</button>
-
-<button type="button" class="btn btn-success btn-xs">
-<span class="glyphicon glyphicon-search"></span> dettagli
-</button>
-
-
-
-
-
+                                    <!--<a href="details/{{ i.id }}">dettagli</a>-->
+                                    <a class="btn btn-default btn-xs" href="details/{{ i.id }}"><span class="glyphicon glyphicon-search"></span> dettagli</a>
                                 </td>
-  -->
-                                <td>
-                               <a class="btn btn-default btn-xs" href="details/{{ i.id }}"><span class="glyphicon glyphicon-search"></span> dettagli</a>
-     </td>
+
                             </tr>
 
                         {% endfor %}

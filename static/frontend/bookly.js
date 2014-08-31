@@ -2,42 +2,42 @@
  * Created by carlozamagni on 24/08/14.
  */
 
-var booklyApp = angular.module('booklyApp', ['ngRoute'], function($interpolateProvider) {
+var booklyApp = angular.module('booklyApp', ['ngRoute'], function ($interpolateProvider) {
     // custom delimiters to avoid collision with jinja2
     $interpolateProvider.startSymbol('[[');
     $interpolateProvider.endSymbol(']]');
 });
 
 
-booklyApp.controller('SearchCtrl', function($scope, $http) {
+booklyApp.controller('searchCtrl', function ($scope, $http) {
+    //var baseUrl = 'http://bookly-app.herokuapp.com';
+    var baseUrl = 'http://bookly-app.herokuapp.com';
+    $scope.submit = function () {
 
-    var isbnQuerystringArg = '';
-    var fulltextQuerystringArg = '';
+        var isbnQuerystringArg = '';
+        var fulltextQuerystringArg = '';
 
-    if($scope.isbn != null){
-        isbnQuerystringArg = 'isbn=' + $scope.isbn;
+        var queryString = '';
+
+        if ($scope.isbn != null) {
+            queryString = queryString.concat('isbn=' + $scope.isbn + '&');
+        }
+
+        if ($scope.fulltext != null) {
+            queryString = queryString.concat('q='.concat($scope.fulltext));
+        }
+
+        $scope.searchUrl = baseUrl + '/api/search?' + queryString;
+        console.log($scope.searchUrl);
+
+        if($scope.searchUrl.indexOf('?', $scope.searchUrl.length - '?'.length) === -1){
+            $http.get($scope.searchUrl)
+                .then(function(res){
+                    $scope.searchResult = res.data;
+
+                    console.log($scope.searchResult);
+            });
+        }
+
     }
-
-    if($scope.fulltext != null){
-        fulltextQuerystringArg = 'q=' + $scope.fulltext;
-    }
-
-    var searchUrl = '/catalog/search?' + fulltextQuerystringArg + '&' + isbnQuerystringArg;
-
-    $http.get(searchUrl)
-       .then(function(res){
-            $scope.item = res.data;
-
-            $scope.item['selectedQuantity'] = 0;
-            $scope.item['selectedColor'] = 'ffffff';
-
-            /*
-            $scope.item.colors.push({code:'ffffff', name:'White'})
-            $scope.item.colors.push({code:'FF2646', name:'Pinky Red'})
-            */
-            console.log($scope.item);
-        });
-
-
-
 });
