@@ -17,12 +17,14 @@ class Book(db.Document):
     status = db.IntField(required=True, choices=[1, 2, 3, 4, 5])
     notes = db.StringField(max_length=5000)
     created_at = db.DateTimeField(required=False, default=datetime.datetime.utcnow())
-    reviews = db.ListField(db.EmbeddedDocumentField(Message))
+    message_thread = db.ListField(db.EmbeddedDocumentField(Message))
 
     def __unicode__(self):
         return '%s - %s' % (self.isbn, self.title)
 
     def dict_representation(self):
+        messages = map(lambda x: x.dict_representation(), self.message_thread)
+
         return {'id': self.id,
                 'isbn': self.isbn,
                 'title': self.title,
@@ -30,4 +32,5 @@ class Book(db.Document):
                 'owner': self.owner,
                 'created_at': self.created_at,
                 'status': self.status,
-                'notes': self.notes}
+                'notes': self.notes,
+                'msg_thread': messages}
