@@ -66,22 +66,45 @@
 
             </div>
 
-            <!-- discussions or message threads can be visualized as this:
+            <!-- message threads -->
+            <div class="row col-md-4">
+                {% for msg in book.message_thread %}
+                    <div class="list-group">
+                        {% if is_owner %}
+                            {% set hide_url = '#' %}
+                            {% set hide_text = 'Nascondi' %}
+                        {% else %}
+                            {% set hide_url = '#' %}
+                            {% set hide_text = '' %}
+                        {% endif %}
+                        <div class="list-group-item">
+                            <h4 class="list-group-item-heading">{{ msg.author_user_name }}</h4><a
+                                href="{{ hide_url }}">{{ hide_text }}</a>
 
-            http://getbootstrap.com/components/#list-group-custom-content
+                            <p class="list-group-item-text">{{ msg.body }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
 
-            that would be cool!
-            -->
-            {% for msg in book.msg_thred %}
-            <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">{{ msg.author_user_name }}</h4>
-                    <p class="list-group-item-text">{{ msg.body }}</p>
-                </a>
+                <form class="form-horizontal" action="/book/{{ book.id }}/comments/add" method="POST">
+                    <div class="form-group">
+                        <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </span>
+                            <div>
+                                <input type="text" name="message_body" class="form-control" required/>
+                            </div>
+                        </div>
+                        <br>
+                        <input name="submit" type="submit" value="Nuovo messaggio" class="btn btn-default"/>
+                    </div>
+
+                </form>
             </div>
-            {% endfor %}
 
         </div>
+
     </div>
 
 {% endblock %}

@@ -40,6 +40,10 @@ app.register_blueprint(blueprint=catalog_app, url_prefix='/catalog')
 from areas.wanted.wanted import wanted_app
 app.register_blueprint(blueprint=wanted_app, url_prefix='/wanted')
 
+# Book endpoint
+from areas.catalog.book import book_app
+app.register_blueprint(blueprint=book_app, url_prefix='/book')
+
 # Search API
 from areas.api.search import api
 app.register_blueprint(blueprint=api, url_prefix='/api')

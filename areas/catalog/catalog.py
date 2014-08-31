@@ -37,6 +37,7 @@ def add():
             return redirect('/catalog/my')
     except Exception, e:
         print str(e)
+        # should set-up mongodb logging handler
 
     return render_template('catalog/new.html', form=form)
 

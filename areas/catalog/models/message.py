@@ -19,6 +19,6 @@ class Message(db.EmbeddedDocument):
 
     def dict_representation(self):
 
-        return {'created_at': self.created_at,
+        return {'created_at': self.created_at.strftime('%H:%M:%S - %Y/%m/%d'),
                 'author_user_name': self.author_user_name,
                 'body': self.body}
