@@ -72,6 +72,14 @@
 
             that would be cool!
             -->
+            {% for msg in book.msg_thred %}
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">{{ msg.author_user_name }}</h4>
+                    <p class="list-group-item-text">{{ msg.body }}</p>
+                </a>
+            </div>
+            {% endfor %}
 
         </div>
     </div>
