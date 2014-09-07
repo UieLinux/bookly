@@ -1,7 +1,7 @@
 import datetime
-from areas.catalog.models.book import Book
 import infrastructure
-from flask import Blueprint, session, request, redirect
+from areas.catalog.models.book import Book
+from flask import Blueprint, session, request, redirect, render_template
 from areas.user.models.private_message import PrivateMessage
 
 
@@ -13,6 +13,22 @@ private_messaging_app = Blueprint('messaging', __name__, static_folder='static',
 login_manager = infrastructure.login_manager
 admin = infrastructure.admin
 db = infrastructure.db
+
+
+@private_messaging_app.route('/<message_id>')
+def get_message_details(message_id):
+    current_user = session.get('user_id', None)
+    message_details = PrivateMessage.find(id=message_id).first()
+
+    if not current_user or (current_user != message_details.to_user):
+        return redirect('/messaging/list')
+
+    return render_template('user/message_details.html', message=message_details)
+
+
+@private_messaging_app.route('/list')
+def get_messages_list():
+    pass
 
 @private_messaging_app.route('/create', methods=['POST'])
 def send_private_message():
@@ -32,3 +48,17 @@ def send_private_message():
         private_message.related_to_book_id = current_book
 
     return redirect('/catalog/details/%s' % current_book)
+
+
+@private_messaging_app.route('/reply', methods=['POST'])
+def reply_to_private_message():
+    current_user = session.get('user_id', None)
+    current_message = request.form['message_id']
+    reply_message_body = request.form['message_body']
+
+    if current_user and current_message and reply_message_body:
+
+        original_message = PrivateMessage.find(id=current_message).first()
+        original_message.reply(content=reply_message_body)
+
+    # TODO: redirect to message page (not created yet)
