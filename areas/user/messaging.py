@@ -8,7 +8,6 @@ from areas.user.models.private_message import PrivateMessage
 
 __author__ = 'carlozamagni'
 
-
 private_messaging_app = Blueprint('messaging', __name__, static_folder='static', template_folder='templates')
 
 login_manager = infrastructure.login_manager
@@ -36,7 +35,7 @@ def get_messages_list():
         return redirect('user/login')
 
     messages = PrivateMessage.Find(to_user=current_user)
-    return render_template('user/message_list', messages=messages)
+    return render_template('user/message_list.html', messages=messages)
 
 
 @private_messaging_app.route('/create', methods=['POST'])
@@ -46,8 +45,7 @@ def send_private_message():
     current_book = request.form['book_id']
     message_body = request.form['message_body']
 
-    if current_user and message_body:
-
+    if message_body and len(message_body) > 0:
         book = Book.objects(id=current_book).first()
 
         private_message = PrivateMessage()
@@ -63,13 +61,11 @@ def send_private_message():
 @private_messaging_app.route('/reply', methods=['POST'])
 @login_required
 def reply_to_private_message():
-    current_user = session.get('user_id', None)
     current_message = request.form['message_id']
     reply_message_body = request.form['message_body']
 
-    if current_user and current_message and reply_message_body:
-
+    if current_message and reply_message_body:
         original_message = PrivateMessage.find(id=current_message).first()
         original_message.reply(content=reply_message_body)
 
-    # TODO: redirect to message page (not created yet)
+    return redirect('messaging/%s' % current_message)

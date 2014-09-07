@@ -44,6 +44,10 @@ app.register_blueprint(blueprint=wanted_app, url_prefix='/wanted')
 from areas.catalog.book import book_app
 app.register_blueprint(blueprint=book_app, url_prefix='/book')
 
+# Private Messages endpoint
+from areas.user.messaging import private_messaging_app
+app.register_blueprint(blueprint=private_messaging_app, url_prefix='/messaging')
+
 # Search API
 from areas.api.search import api
 app.register_blueprint(blueprint=api, url_prefix='/api')
