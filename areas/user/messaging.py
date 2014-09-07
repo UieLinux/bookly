@@ -1,5 +1,6 @@
 import datetime
 import infrastructure
+from flask.ext.login import login_required
 from areas.catalog.models.book import Book
 from flask import Blueprint, session, request, redirect, render_template
 from areas.user.models.private_message import PrivateMessage
@@ -16,6 +17,7 @@ db = infrastructure.db
 
 
 @private_messaging_app.route('/<message_id>')
+@login_required
 def get_message_details(message_id):
     current_user = session.get('user_id', None)
     message_details = PrivateMessage.find(id=message_id).first()
@@ -27,10 +29,18 @@ def get_message_details(message_id):
 
 
 @private_messaging_app.route('/list')
+@login_required
 def get_messages_list():
-    pass
+    current_user = session.get('user_id', None)
+    if not current_user:
+        return redirect('user/login')
+
+    messages = PrivateMessage.Find(to_user=current_user)
+    return render_template('user/message_list', messages=messages)
+
 
 @private_messaging_app.route('/create', methods=['POST'])
+@login_required
 def send_private_message():
     current_user = session.get('user_id', None)
     current_book = request.form['book_id']
@@ -51,6 +61,7 @@ def send_private_message():
 
 
 @private_messaging_app.route('/reply', methods=['POST'])
+@login_required
 def reply_to_private_message():
     current_user = session.get('user_id', None)
     current_message = request.form['message_id']
