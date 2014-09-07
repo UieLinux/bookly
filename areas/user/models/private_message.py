@@ -27,3 +27,12 @@ class PrivateMessage(db.Document):
                 'content': self.content,
                 'created_at': self.created_at}
 
+    def reply(self, content):
+        reply_message = PrivateMessage()
+        reply_message.created_at = datetime.datetime.utcnow()
+        reply_message.content = content
+        reply_message.from_user = self.to_user
+        reply_message.to_user = self.from_user
+        reply_message.related_to_book_id = self.related_to_book_id
+
+        reply_message.save()
