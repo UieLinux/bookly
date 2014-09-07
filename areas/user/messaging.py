@@ -54,6 +54,7 @@ def send_private_message():
         private_message.from_user = current_user
         private_message.to_user = book.owner
         private_message.related_to_book_id = current_book
+        private_message.save()
 
     return redirect('/catalog/details/%s' % current_book)
 
